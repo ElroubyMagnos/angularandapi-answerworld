@@ -1,0 +1,10 @@
+.checking
+{
+    padding: 5px;
+    background-color: lightgray;
+    border-radius: 5px;
+    color: red;
+    font-size: 12px;
+    margin: 0;
+    text-align: center;
+}

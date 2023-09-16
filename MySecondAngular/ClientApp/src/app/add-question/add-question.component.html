@@ -1,0 +1,71 @@
+<div class="flex-row-rev spacebetween flex-column-mob">
+  <Form class="grayscale lineandshine width-400px t-center">
+    <input
+      #title
+      class="m-10 t-center inline-block width-300px"
+      type="text"
+      name="Title"
+      placeholder="عنوان السؤال"
+    />
+    <br />
+    <textarea
+      #content
+      class="t-right"
+      placeholder="محتوي السؤال"
+      name="Content"
+    ></textarea>
+    <br />
+    <div class="border-blacklite m-10">
+      <p>القسم</p>
+      <select #cat class="fs-20 mb-10" name="Cat">
+        <option *ngFor="let Cat of Cats">{{ Cat.catName }}</option>
+      </select>
+      <div>
+        <input
+          #myCat
+          class="t-center"
+          type="text"
+          placeholder="ادخل القسم الخاص بك"
+        />
+        <button class="btn btn-blue-flat" type="button" (click)="AddCat(myCat)">
+          اضافة
+        </button>
+      </div>
+    </div>
+
+    <br />
+    <button
+      #sub
+      (click)="AddQues(title, content, cat)"
+      class="btn-blue-flat fs-25"
+      type="button"
+    >
+      نشر
+    </button>
+  </Form>
+  <div>
+    <div class="grayscale lineandshine width-400px height-300px mb-10 t-center">
+      <h1 class="t-center">اعلن معنا</h1>
+      <hr class="mb-15" />
+      <img class="width-300px" src="assets/Images/adhere.jpg" alt="" />
+    </div>
+    <div class="grayscale lineandshine width-400px heightfc t-center">
+      <h1>افضل الاسئلة</h1>
+      <hr />
+      <a
+        routerLink="/qc/{{ Question.id }}/"
+        *ngFor="let Question of Loading.TopQuestions"
+        style="direction: ltr"
+        class="flex-row-rev align-center"
+      >
+        <img
+          class="width-25px height-25px rad-circle"
+          src="assets/Images/personal.ico"
+          alt=""
+        />
+        <p>:{{ Question.ownerName }}</p>
+        <p>{{ Question.title }}</p>
+      </a>
+    </div>
+  </div>
+</div>

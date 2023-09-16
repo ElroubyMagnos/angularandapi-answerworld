@@ -1,0 +1,136 @@
+.ghost
+{
+    animation: ghost 4s infinite;
+}
+
+@keyframes ghost {
+    0%
+    {
+        opacity: 1;
+    }
+    50%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+.continue-circle
+{
+    animation: continue-circle 4s infinite;
+}
+
+@keyframes continue-circle {
+    0%
+    {
+        rotate: 0deg;
+    }
+    50%
+    {
+        rotate: 180deg;
+    }
+    100%
+    {
+        rotate: 360deg;
+    }
+}
+
+.continue-circle-plus
+{
+    animation: continue-circle-plus 4s infinite;
+}
+
+@keyframes continue-circle-plus {
+    100%
+    {
+        rotate: 360deg;
+    }
+}
+
+.crazy-circle
+{
+    animation: crazy-circle 4s infinite;
+}
+
+@keyframes crazy-circle {
+    100%
+    {
+        rotate: 100turn;
+    }
+}
+
+.toyourface
+{
+    transition: all linear 0.5s;
+}
+
+.toyourface:hover
+{
+    transform: scale(1.1) rotate(5deg);
+}
+
+.RiseUp
+{
+    animation: RiseUp 1s forwards;
+}
+
+@keyframes RiseUp {
+    0%
+    {
+        transform: translateY(0);
+    }
+    75%
+    {
+        transform: translateY(-10px);
+    }  
+    100%
+    {
+        transform: translateY(0);
+    }
+}
+
+.RiseDown
+{
+    animation: RiseDown 1s forwards;
+}
+
+@keyframes RiseDown {
+    0%
+    {
+        transform: translateY(0);
+    }
+    75%
+    {
+        transform: translateY(10px);
+    }  
+    100%
+    {
+        transform: translateY(0);
+    }
+}
+
+.RiseAppear
+{
+    animation: RiseAppear 1.5s forwards;
+}
+
+@keyframes RiseAppear {
+    0%
+    {
+        transform: translateY(0);
+        opacity: 0;
+    }
+    50%
+    {
+        transform: translateY(-10px);
+        opacity: 0.5;
+    }  
+    100%
+    {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}

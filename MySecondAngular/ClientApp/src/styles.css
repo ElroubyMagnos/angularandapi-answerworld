@@ -1,0 +1,32 @@
+@import url('assets/ElroubyFramework/main.css');
+
+.earth
+{
+    position: relative;
+}
+
+.earth::before
+{
+    content: attr(data-count);
+    position: absolute;
+    left: 0;
+    top: 0;
+    border-radius: 50%;
+    background-color: red;
+}
+
+input
+{
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.UpandDown img
+{
+    height: 50px;
+    margin: 0;
+}

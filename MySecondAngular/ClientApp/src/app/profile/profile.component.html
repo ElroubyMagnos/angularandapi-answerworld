@@ -1,0 +1,42 @@
+<div class="cover width-100 height-300px back-gray p-relative">
+    <img class="width-100 height-100" src="{{Loading.Account.coverURL}}" alt="">
+</div>
+<div class="personal t-left p-relative flex-row">
+    <img style="transform: translateY(-50%) translateX(25px);" class="width-200px height-200px rad-circle width-100px-mob height-100px-mob" src="{{Loading.Account.pictureURL}}" alt="">
+    <p class="ml-25 fs-25">{{Loading.Account.username}}</p>
+
+    <div *ngIf="!IsOwner() && IsSigned()">
+        <button (click)="Follow();" class="btn-red width-100px height-50px width-50px-mob fs-mob-10">{{Followed ? 'الغاء المتابعة' : 'متابعة'}}</button>
+
+        <button (click)="Message();" class="btn-blue width-100px height-50px width-50px-mob fs-mob-10">مراسلة</button>
+    </div>
+    
+</div>
+<div class="flex-row-wrap m-auto-center-leftright">
+    <div class="m-auto-center-leftright mb-15">
+        <div class="grayscale-center lineandshine width-300px mb-15">
+            <h1 class="t-center">احدث الاسئلة</h1>
+            <hr />
+            <div style="direction: rtl;" *ngFor="let proques of Loading.ProfileQuestions">
+                <a routerLink="/qc/{{proques.id}}/">
+                    {{proques.title}}
+                </a>
+            </div>
+        </div>
+        <div class="grayscale-center lineandshine width-300px mb-15">
+            <h1 class="t-center">احدث الاجابات</h1>
+            <hr />
+            <div style="direction: rtl;" *ngFor="let proans of Loading.ProfileComments">
+                <a routerLink="/qc/{{proans.question}}/">
+                    {{proans.text}}
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="grayscale-center lineandshine t-center width-75 heightfc">
+        <div class="p-50">
+            <p #Content class="fs-25">{{Loading.Account.bio}}</p>
+            <button *ngIf="IsOwner()" #Edit (click)="EditBio(Content, Edit)" class="btn-blue-flat">تعديل</button>
+        </div>
+    </div>
+</div>

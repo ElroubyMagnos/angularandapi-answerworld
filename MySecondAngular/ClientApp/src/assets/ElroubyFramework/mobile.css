@@ -1,0 +1,321 @@
+@media (max-width: 767px)
+{
+    .m-auto-right-mob
+    {
+        margin-right: auto;
+    }
+
+    .m-auto-left-mob
+    {
+        margin-left: auto;
+    }
+
+    .m-auto-top-mob
+    {
+        margin-top: auto;
+    }
+
+    .m-auto-bottom-mob
+    {
+        margin-bottom: auto;
+    }
+    .m-auto-center-leftright-mob
+    {
+        margin: 0 auto;
+    }
+
+    .m-auto-center-topbottom-mob
+    {
+        margin: auto 0;
+    }
+    .fs-mob-5
+    {
+        font-size: 5px;
+    }
+
+    .fs-mob-10
+    {
+        font-size: 10px;
+    }
+
+    .fs-mob-14
+    {
+        font-size: 14px;
+    }
+
+    .fs-mob-15
+    {
+        font-size: 15px;
+    }
+
+    .fs-mob-20
+    {
+        font-size: 20px;
+    }
+
+    .fs-mob-25
+    {
+        font-size: 25px;
+    }
+
+    .fs-mob-30
+    {
+        font-size: 30px;
+    }
+
+    .fs-mob-50
+    {
+        font-size: 50px;
+    }
+
+    .fs-mob-70
+    {
+        font-size: 70px;
+    }
+
+    .tcenter-mob
+    {
+        text-align: center;
+    }
+    
+    .hide-mob
+    {
+        display: none;
+    }
+
+    /*Flex*/
+    .jc-center-mob
+    {
+        justify-content: center;
+    }
+    .jc-spacebetween-mob
+    {
+        justify-content: space-between;
+    }
+    .ai-center-mob
+    {
+        align-items: center;
+    }
+    /*End Flex*/
+
+    /*Width Height Pixel*/
+    .width-500px-mob
+    {
+        width: 500px;
+    }
+
+    .width-400px-mob
+    {
+        width: 400px;
+    }
+
+    .width-300px-mob
+    {
+        width: 300px;
+    }
+
+    .width-200px-mob
+    {
+        width: 200px;
+    }
+
+    .width-100px-mob
+    {
+        width: 100px;
+    }
+
+    .width-75px-mob
+    {
+        width: 75px;
+    }
+
+    .width-50px-mob
+    {
+        width: 50px;
+    }
+
+    .width-25px-mob
+    {
+        width: 25px;
+    }
+
+    .height-500px-mob
+    {
+        height: 500px;
+    }
+
+    .height-400px-mob
+    {
+        height: 400px;
+    }
+
+    .height-300px-mob
+    {
+        height: 300px;
+    }
+
+    .height-200px-mob
+    {
+        height: 200px;
+    }
+
+    .height-100px-mob
+    {
+        height: 100px;
+    }
+
+    .height-75px-mob
+    {
+        height: 75px;
+    }
+
+    .height-50px-mob
+    {
+        height: 50px;
+    }
+
+    .height-25px-mob
+    {
+        height: 25px;
+    }
+    /*Width Height Pixel*/
+
+    /*Width Height Mob*/
+    .width-100-mob
+    {
+        width: 100%;
+    }
+    .width-95-mob
+    {
+        width: 95%;
+    }
+    .width-85-mob
+    {
+        width: 85%;
+    }
+    .width-75-mob
+    {
+        width: 75%;
+    }
+    .width-50-mob
+    {
+        width: 50%;
+    }
+    .width-40-mob
+    {
+        width: 40%;
+    }
+    .width-30-mob
+    {
+        width: 30%;
+    }
+    .width-25-mob
+    {
+        width: 25%;
+    }
+    .width-10-mob
+    {
+        width: 10%;
+    }
+    .height-100-mob
+    {
+        height: 100%;
+    }
+    .height-95-mob
+    {
+        height: 95%;
+    }
+    .height-85-mob
+    {
+        height: 85%;
+    }
+    .height-75-mob
+    {
+        height: 75%;
+    }
+    .height-50-mob
+    {
+        height: 50%;
+    }
+    .height-40-mob
+    {
+        height: 40%;
+    }
+    .height-30-mob
+    {
+        height: 30%;
+    }
+    .height-25-mob
+    {
+        height: 25%;
+    }
+    .height-10-mob
+    {
+        height: 10%;
+    }
+    /*End Width Height Mob*/
+    /*Flex*/
+    .flex-wrap-mob
+    {
+        flex-wrap: wrap;
+    }
+
+    .flex-row-mob
+    {
+        display: flex;
+        gap: 10px;
+    }
+
+    .flex-row-rev-mob
+    {
+        display: flex;
+        flex-direction: row-reverse;
+        gap: 10px;
+    }
+
+    .flex-row-wrap-mob
+    {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .flex-row-wrap-rev-mob
+    {
+        display: flex;
+        flex-direction: row-reverse;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .flex-column-mob
+    {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .flex-column-mob-rev
+    {
+        display: flex;
+        flex-direction: column-reverse;
+        gap: 10px;
+    }
+
+    .flex-column-wrap-mob
+    {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .flex-column-wrap-rev-mob
+    {
+        display: flex;
+        flex-direction: column-reverse;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    /*End Flex*/
+}

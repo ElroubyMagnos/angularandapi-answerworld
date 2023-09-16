@@ -1,0 +1,64 @@
+<div class="flex-row spacebetween back-blue pl-5 pr-5 mb-10 align-center">
+    <div class="logo align-center">
+        <img class="width-200px height-100px" src="assets/Images/logo.png" alt="">
+    </div>
+    <div class="n-navbar">
+        <span class="Show"></span>
+        <ul class="flex-row-rev ai-center-mob">
+            <li><button class="btn-blue-flat uandd p-2" type="button" routerLink="/"><i class="fa-solid fa-house"></i> الصفحة الرئيسية</button></li>
+            <li><button *ngIf="!CheckSigned();" class="btn-blue-flat uandd p-2" type="button" routerLink="/aqc"><i class="fa-solid fa-plus"></i> نشر سؤال</button></li>
+            <li><button *ngIf="CheckSigned();" class="btn-blue-flat uandd p-2" type="button" onclick="document.getElementById('SignIn').style.display = 'block'"><i class="fa-solid fa-arrow-right-to-bracket"></i> تسجيل الدخول</button></li>
+            <li><button *ngIf="CheckSigned();" class="btn-blue-flat uandd p-2" type="button" onclick="document.getElementById('SignUp').style.display = 'block'"><i class="fa-solid fa-user-plus"></i> التسجيل في الموقع</button></li>
+            <li><button (click)="SignOut();" *ngIf="!CheckSigned();" class="btn-blue-flat uandd p-2" type="button" ><i class="fa-solid fa-arrow-right-from-bracket"></i> تسجيل الخروج</button></li>
+            <li>
+                <span class="earth" data-count="0">
+                    <i class="fa-solid fa-earth-americas fs-25"></i>
+                </span>
+            </li>
+            <li>
+                <span class="earth" data-count="0">
+                    <i class="fa-solid fa-comment fs-25"></i>
+                </span>
+            </li>
+            <li class="mr-50">
+                <span *ngIf="!CheckSigned();" class="color-blue-2 rad-15 flex-row align-center m-auto-right">
+                    <a routerLink="/pc/{{CurrentLogin.id}}/">{{CurrentLogin.username}}</a>
+                    <img class="width-50px height-50px rad-circle" src="{{CurrentLogin.picpath}}" alt="">
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div style="left: calc(50% - 150px);top: calc(50% - 100px);border: 2px solid lightgray;" id="SignIn" class="width-300px height-200px NotFull">
+        <button style="left: 0;top: 0;position: absolute;" class="btn-red-flat" onclick="document.getElementById('SignIn').style.display = 'none'" type="button">X</button>
+        <form class="t-center" method="post">
+            <input #logemail class="t-center" type="email" name="logEmail" placeholder="الايميل" required>
+            <input #logpassword class="t-center" type="password" name="logPassword" placeholder="كلمة السر" required>            
+            
+            <div class="flex-row">
+                <i class="fa-brands fa-google fs-25 col-3 color-black back-red-hov rad-10"></i>
+                <button (click)="SignIn(logemail, logpassword);" class="btn-blue-flat col-4" type="submit">الدخول</button>
+            </div>
+        </form>
+        
+    </div>
+    
+    <div style="left: calc(50% - 150px);top: calc(50% - 100px);border: 2px solid lightgray;" id="SignUp" class="width-300px heightfc NotFull">
+        <button style="left: 0;top: 0;position: absolute;" class="btn-red-flat" onclick="document.getElementById('SignUp').style.display = 'none'" type="button">X</button>
+        <form class="t-center" method="post">
+            <input #username (change)="checkusername = username.value.length < 3" class="t-center" type="text" name="Username" placeholder="اسم المستخدم" required>
+            <p class="checking" *ngIf="checkusername">يرجي ادخال اسم المستخدم</p>
+            
+            <input #email (change)="checkemail = !email.value.includes('@') || !email.value.includes('.')" class="t-center" type="email" name="Username" placeholder="البريد الالكتروني" required>
+            <p class="checking" *ngIf="checkemail">يرجي ادخال الايميل</p>
+            
+            <input #password (change)="checkpass = password.value.length < 3" class="t-center" type="password" name="Password" placeholder="كلمة السر" required>
+            <p class="checking" *ngIf="checkpass">يرجي ادخال كلمة السر</p>
+            
+            <input #cpassword (change)="checkpassequal = password.value.length != cpassword.value.length" class="t-center" type="password" name="CPassword" placeholder="تكرار كلمة السر" required>            
+            <p class="checking" *ngIf="checkpassequal">كلمتي السر غير متطابقتين</p>
+
+            <button #submit (click)="AddNewAccount(username, email, password, cpassword, submit);" class="btn-blue-flat col-4" type="submit">التسجيل</button>
+        </form>
+        
+    </div>
+</div>

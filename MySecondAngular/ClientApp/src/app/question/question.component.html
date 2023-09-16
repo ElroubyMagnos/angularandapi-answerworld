@@ -1,0 +1,56 @@
+<div *ngIf="Loading.Question">
+    <div style="justify-content: space-around;" class="flex-row flex-row-wrap-mob">
+        <div>
+            <div class="grayscale lineandshine height-300px width-300px mb-15 width-100-mob">
+                <h1 class="mt-0 mb-15 t-center">اعلن معنا</h1>
+                <hr/>
+                <img style="max-width: 100%;" class="widthfc heightfc" src="assets/Images/adhere.jpg" alt="">
+            </div>
+            <div class="grayscale lineandshine heightfc width-300px width-100-mob">
+                <h1 class="mt-0 mb-15 t-center">اسئلة مماثلة</h1>
+                <hr/>
+                <div style="direction: rtl;" *ngFor="let Ques of Loading.RandQues">
+                    <a routerLink="/qc/{{Ques.id}}" class="fs-25 m-auto-left t-right">{{Ques.ownerName}}: {{Ques.title}}</a>
+                    <hr />
+                </div>
+            </div>
+        </div>
+        
+        <div class="grayscale lineandshine width-75 t-right flex-row width-100-mob">
+            <div class="m-auto-left">
+                <h1>{{Loading.Question.title}}</h1>
+                <p>{{Loading.Question.content}}</p>
+            </div>
+            <div>
+                <div class="UpandDown flex-column align-center m-0">
+                    <img (click)="UpQues();" [src]="UVote ? 'assets/Images/arrow-up-clicked.png' : 'assets/Images/arrow-up.png'" alt="">
+                    <span class="fs-20">{{Loading.QuesVote}}</span>
+                    <img (click)="DownQues();" [src]="DVote ? 'assets/Images/arrow-down-clicked.png' : 'assets/Images/arrow-down.png'" alt="">
+                    <p>{{Loading.Question.ownerName}} بواسطة</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="SignedIn()" class="flex-row-rev m-10 mb-50">
+        <form class="width-100-mob" action="post">
+            <textarea #comment class="width-500px height-100px t-right width-100-mob" name="comment" required></textarea>
+            <br/>
+            <button (click)="PostAComment(comment)" class="btn-blue-flat fs-25" type="submit">نشر التعليق</button>
+        </form>
+    </div>
+    <div *ngIf="Loading.Comments.length > 0" class="grayscale lineandshine width-500px m-auto-left width-100-mob">
+        <h1 class="mt-0 mb-15 t-center">التعليقات</h1>
+        <hr/>
+        <div>
+            <div *ngFor="let Comment of Loading.Comments" class="flex-row m-auto-left p-25 align-center">
+                <p style="direction: rtl;" class="m-auto-left fs-20">{{Comment.ownerName}}: {{Comment.text}}</p>
+                <img class="rad-circle width-100px height-100px" src="{{Comment.piPath}}" alt="">
+                <div class="UpandDown flex-column align-center m-0">
+                    <img (load)="UPAns(Comment.id, UP, Down);" #UP (click)="UpAnswer(Comment.id, UP, Down, Score);" src="assets/Images/arrow-up.png" alt="">
+                    <span #Score class="fs-20">{{ (Comment.scoreUP.split(',').length - 1) - (Comment.scoreDown.split(',').length - 1) }}</span>
+                    <img (load)="DownAns(Comment.id, UP, Down);" #Down (click)="DownAnswer(Comment.id, UP, Down, Score);" src="assets/Images/arrow-down.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

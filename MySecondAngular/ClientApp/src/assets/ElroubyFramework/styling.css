@@ -1,0 +1,26 @@
+.linewithdot
+{
+    position: relative;
+}
+
+.linewithdot::before
+{
+    content: "";
+    background-color: black;
+    width: 108px;
+    height: 3px;
+    position: absolute;
+    transform: translateY(48px);
+}
+
+.linewithdot::after
+{
+    content: "";
+    background-color: black;
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    transform: translateY(37px) translateX(-65px);
+    border-radius: 50%;
+    border: 5px solid white;
+}

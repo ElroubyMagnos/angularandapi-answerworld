@@ -1,0 +1,228 @@
+@import url('buttons.css');
+@import url('dynamics.css');
+@import url('floating.css');
+@import url('anime.css');
+@import url('GlobalRules.css');
+@import url('inputs.css');
+@import url('styling.css');
+@import url('mobile.css');
+
+:root
+{
+    --Main-Color: #00112c;
+    --Blue-Color: #0099e5;
+    --Green-Color: #34bf49;
+    --Gray-BG: #caccd1;
+    --lGray-BG: #f3f4f7;
+    --Blue-BG: #8db9ca;
+    --Main-Color-2: #5865f2;
+}
+
+/*Mix Colors*/
+.mix-blue
+{
+    background-color: var(--Blue-Color);
+    color: white;
+}
+
+.mix-blue:hover
+{
+    background-color: var(--Blue-BG);
+    color: black;
+}
+
+.mix-gray
+{
+    background-color: var(--Gray-BG);
+    color: var(--Blue-BG);
+}
+
+.mix-gray:hover
+{
+    background-color: gray;
+    color: black;
+}
+/*End Mix Colors*/
+
+/*Back Colors*/
+.back-white
+{
+    background-color: white;
+}
+
+.back-black
+{
+    background-color: var(--Main-Color);
+}
+
+.back-blue
+{
+    background-color: var(--Blue-Color);
+}
+
+.back-Green
+{
+    background-color: var(--Green-Color);
+}
+
+.back-blue-2
+{
+    background-color: var(--Main-Color-2);
+}
+
+.back-light-blue
+{
+    background-color: var(--Blue-BG);
+}
+
+.back-gray
+{
+    background-color: var(--Gray-BG);
+}
+
+.back-lgray
+{
+    background-color: var(--lGray-BG);
+}
+/*End Back Colors*/
+
+/*Content Colors*/
+.color-white
+{
+    color: white;
+}
+
+.color-black
+{
+    color: var(--Main-Color);
+}
+
+.color-blue
+{
+    color: var(--Blue-Color);
+}
+
+.color-Green
+{
+    color: var(--Green-Color);
+}
+
+.color-blue-2
+{
+    color: var(--Main-Color-2);
+}
+
+.color-light-blue
+{
+    color: var(--Blue-BG);
+}
+
+.color-gray
+{
+    color: var(--Gray-BG);
+}
+
+.color-lgray
+{
+    color: var(--lGray-BG);
+}
+/*End Content Colors*/
+
+/* Windows */
+.lineandshine:hover::before
+{
+    background-image: linear-gradient(to right, var(--Blue-BG), var(--Main-Color-2));
+}
+
+.lineandshine::before
+{
+    position: absolute;
+    content: "";
+    background-image: linear-gradient(to right, var(--Main-Color-2), var(--Blue-BG));
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    transition: all linear 0.5s;
+}
+
+.lineandshine:hover
+{
+    transform: scale(1.01);
+}
+
+.lineandshine
+{
+    position: relative;
+    padding: 5px;
+    background-color: #f3f4f7;
+    border-radius: 5px;
+}
+
+.grayscale
+{
+    background-color: whitesmoke;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.grayscale-center
+{
+    background-color: whitesmoke;
+    color: black;
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin: 0 auto;
+}
+
+.rightandleft
+{
+    background-color: whitesmoke;
+    color: black;
+    padding: 15px;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    position: relative;
+}
+
+.rightandleft:hover
+{
+    transform: scale(1.01);
+}
+
+.rightandleft::before
+{
+    position: absolute;
+    content: "";
+    background-image: linear-gradient(to right, var(--Main-Color-2), var(--Blue-BG));
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    transition: all linear 0.5s;
+}
+
+.rightandleft:hover::before
+{
+    background-image: linear-gradient(to top, var(--Blue-BG), var(--Main-Color-2));
+}
+
+.rightandleft::after
+{
+    position: absolute;
+    content: "";
+    background-image: linear-gradient(to right, var(--Main-Color-2), var(--Blue-BG));
+    top: 0;
+    right: 0;
+    width: 5px;
+    height: 100%;
+    transition: all linear 0.5s;
+}
+
+.rightandleft:hover::after
+{
+    background-image: linear-gradient(to top, var(--Blue-BG), var(--Main-Color-2));
+}
+/*End Windows*/

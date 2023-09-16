@@ -1,0 +1,84 @@
+<section
+  class="flex-row-wrap spacebetween tcenter-mob m-auto-center-leftright flex-column-mob-rev"
+>
+  <div class="flex-column-rev">
+    <div
+      class="left lineandshine grayscale width-400px mb-10 width-95-mob m-auto-right-mob"
+    >
+      <h1 class="t-center">اعلن معنا</h1>
+      <hr class="mb-15" />
+      <img class="width-300px" src="assets/Images/adhere.jpg" alt="" />
+    </div>
+
+    <div
+      class="left lineandshine grayscale width-400px heightfc mb-10 width-95-mob m-auto-right-mob"
+    >
+      <h1 class="t-center">اعلي الاعضاء</h1>
+      <hr class="mb-1" />
+
+      <div
+        *ngFor="let Account of Loading.Accounts"
+        class="t-right flex-row-rev align-center border-blacklite"
+      >
+        <img
+          class="width-25px height-25px rad-circle"
+          src="{{ Account.pictureURL }}"
+          alt=""
+        />
+        <a routerLink="/pc/{{ Account.id }}/" class="fs-20">{{
+          Account.username
+        }}</a>
+        <p>{{ Account.score }}</p>
+        <p>نقطة</p>
+      </div>
+    </div>
+
+    <div
+      class="left lineandshine grayscale width-400px heightfc mb-10 width-95-mob m-auto-right-mob"
+    >
+      <h1 class="t-center">اعلي الاجابات</h1>
+      <hr class="mb-15" />
+      <div
+        *ngFor="let comment of Loading.TopAnswers"
+        class="flex-row-rev align-center"
+      >
+        <img
+          class="width-25px height-25px rad-circle"
+          src="{{ comment.piPath }}"
+          alt=""
+        />
+        <p class="fs-20">{{ comment.ownerName }}</p>
+        <!--يذهب الي صفحة السؤال الخاص بالاجابة-->
+        <a routerLink="qc/{{ comment.question }}/">{{ comment.text }}</a>
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="right lineandshine grayscale width-50 width-95-mob m-auto-right-mob"
+  >
+    <h1 class="t-center">احدث الاسئلة</h1>
+    <hr class="mb-15" />
+    <div class="t-right">
+      <!--Loop-->
+      <div class="mb-25" *ngFor="let Question of Loading.Questions">
+        <a class="fs-25" routerLink="qc/{{ Question.id }}">{{
+          Question.title
+        }}</a>
+        <div>
+          <i class="fa-solid fa-eye color-blue">
+            {{ Question.views.split(",").length - 1 }}</i
+          >
+          <i class="fa-solid fa-comment"> 0</i>
+          <i class="fa-solid fa-star">
+            {{
+              Question.scoreUP.split(",").length -
+                1 -
+                (Question.scoreDown.split(",").length - 1)
+            }}</i
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

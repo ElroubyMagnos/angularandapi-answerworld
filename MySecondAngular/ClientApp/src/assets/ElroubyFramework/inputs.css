@@ -1,0 +1,20 @@
+input
+{
+    outline: none;
+    padding: 5px 15px;
+    border-radius: 3px;
+    background-color: white;
+}
+
+input:focus
+{
+    background-color: lightgray;
+    color: black;
+}
+
+textarea
+{
+    resize: none;
+    width: 300px;
+    height: 200px;
+}
